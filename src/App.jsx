@@ -1,13 +1,16 @@
 
-import './App.css'
+import { Outlet } from 'react-router-dom'
+
 
 function App() {
-  
+
   return (
     <>
-      
-      <h1>Vite + React</h1>
-      
+
+      <div className='max-w-6xl mx-auto'>
+        <Outlet></Outlet>
+      </div>
+
     </>
   )
 }
