@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import  { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import Swal from "sweetalert2";
 
 
 const Contact = () => {
@@ -16,6 +17,13 @@ const Contact = () => {
 
         emailjs.sendForm(serviceId, templateID, form.current, publicKey)
             .then((result) => {
+                Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Successfully message sent",
+                    showConfirmButton: false,
+                    timer: 1000
+                  });
                 console.log(result.text);
             }, (error) => {
                 console.log(error.text);
